@@ -14,6 +14,4 @@ private:
 	int m_yPos;
 
 public:
-
-
 };

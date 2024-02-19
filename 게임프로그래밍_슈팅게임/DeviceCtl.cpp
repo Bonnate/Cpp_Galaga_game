@@ -29,14 +29,14 @@ bool StartProgram()
 		drawToBackBuffer(35, 21, "|   | | | |       | |       | |    ___|");
 		drawToBackBuffer(35, 22, "|   |_| | |   _   | | ||_|| | |   |___");
 		drawToBackBuffer(35, 23, "|_______| |__| |__| |_|   |_| |_______|");
-	
+
 		drawToBackBuffer(30, 50, " ___    _____  _           __     ________ _____");
 		drawToBackBuffer(30, 51, "|__ \\  |  __ \\| |        /\\\\ \\   / /  ____| __  \\");
 		drawToBackBuffer(30, 52, "   ) | | |__) | |       /  \\\\ \\_/ /| |__  | |__)|");
 		drawToBackBuffer(30, 53, "  / /  |  ___/| |      / /\\ \\\\   / |  __| |  _  /");
 		drawToBackBuffer(30, 54, " / /_  | |    | |____ / ____ \\| |  | |____| | \\ \\");
 		drawToBackBuffer(30, 55, "|____| |_|    |______/_/    \\_\\_|  |______|_|  \\_\\");
-						 
+
 		drawToBackBuffer(30, 58, "  __    _____  _           __     ________ _____");
 		drawToBackBuffer(30, 59, " /_ |  |  __ \\| |        /\\\\ \\   / /  ____| __  \\");
 		drawToBackBuffer(30, 60, "  | |  | |__) | |       /  \\\\ \\_/ /| |__  | |__)|");
@@ -44,11 +44,11 @@ bool StartProgram()
 		drawToBackBuffer(30, 62, "  | |  | |    | |____ / ____ \\| |  | |____| | \\ \\");
 		drawToBackBuffer(30, 63, "  |_|  |_|    |______/_/    \\_\\_|  |______|_|  \\_\\");
 
-		
-				
+
+
 		if (GetAsyncKeyState(VK_UP) & 0x8000)			is1Player = FALSE;
 		if (GetAsyncKeyState(VK_DOWN) & 0x8000)			is1Player = TRUE;
-		
+
 		if (GetAsyncKeyState(VK_SPACE) & 0x8000)		return is1Player;
 
 		if (is1Player)
@@ -73,7 +73,7 @@ bool StartProgram()
 
 		render();
 	}
-}	
+}
 
 void DisplayInfo(const int Player_1_HP)
 {
@@ -92,8 +92,6 @@ void DisplayInfo(const int Player_1_HP)
 	{
 		drawToBackBuffer(80, i, "|");
 	}
-
-
 
 	drawToBackBuffer(82, 64, "OO  OO OOOOOO");
 	drawToBackBuffer(82, 65, "OO  OO OO  OO");

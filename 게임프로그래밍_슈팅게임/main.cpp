@@ -68,7 +68,7 @@ Player* GetPlayerClass(const char Player_ID) { return Player_P[Player_ID]; }
 //PreInit Fncs
 ///////////////////////////////////////////
 bool StartProgram();
-void RunGame(); 
+void RunGame();
 void InitGame(bool is1Player);
 void RunPlayer();
 void RunEnemy();
@@ -76,7 +76,7 @@ void SpawnEnemy();
 ///////////////////////////////////////////
 
 int main()
-{	
+{
 	system(" mode  con lines=70   cols=110 ");
 	bool is1Player = StartProgram();
 	InitGame(is1Player);
@@ -95,7 +95,7 @@ void RunGame()
 		if (GLOBALTIMEA > 100)
 		{
 			GLOBALTIMEA = 1;
-			if(GLOBALTIMEA_100x++ % 2)SpawnEnemy();
+			if (GLOBALTIMEA_100x++ % 2)SpawnEnemy();
 		}
 
 		Sleep(1);
@@ -110,11 +110,11 @@ void RunGame()
 			sprintf(Text, "%d %d %d %d %d %d %d", Player_P[0]->GetXPos(), Player_P[0]->GetYPos(), Player_P[0]->GetHP(), Player_P[1]->GetXPos(), Player_P[1]->GetYPos(), Player_P[1]->GetHP(), GLOBALTIMEA);
 			break;
 		}
+
 		drawToBackBuffer(81, 69, Text);
 		RunPlayer();
 		RunEnemy();
 
-		
 		if (MAX_PLAYERS == 1) {
 			DisplayInfo(Player_P[0]->GetHP());
 		}
@@ -122,7 +122,7 @@ void RunGame()
 			DisplayInfo(Player_P[0]->GetHP(), Player_P[1]->GetHP());
 		}
 
-		
+
 		render();
 	}
 }
@@ -338,13 +338,13 @@ void RunPlayer()
 	//Player Ammo Speed
 	for (int i = 0; i < PLAYERMAXBULLET; ++i)
 	{
-		for(int j = 0; j < MAX_PLAYERS; ++j)
-		if (Player_Bullet[j][i]->f_isActive())
-		{
-			Player_Bullet[j][i]->UseBullet_To_Enemy(ActivatedEnemy);
-		}
+		for (int j = 0; j < MAX_PLAYERS; ++j)
+			if (Player_Bullet[j][i]->f_isActive())
+			{
+				Player_Bullet[j][i]->UseBullet_To_Enemy(ActivatedEnemy);
+			}
 	}
-	
+
 }
 
 
@@ -442,16 +442,16 @@ void render()
 
 void SpawnEnemy()
 {
-	if(GLOBALTIMEA_100x % 8)
-	for (int i = 0; i < ENEMYLV_1MAXCNT; ++i)
-	{
-		if (ActivatedEnemy[i] == nullptr)
+	if (GLOBALTIMEA_100x % 8)
+		for (int i = 0; i < ENEMYLV_1MAXCNT; ++i)
 		{
-			ActivatedEnemy[i] = new Enemy(i, 10, 1);
-			ActivatedEnemy[i]->InitEnemy();
-			return;
+			if (ActivatedEnemy[i] == nullptr)
+			{
+				ActivatedEnemy[i] = new Enemy(i, 10, 1);
+				ActivatedEnemy[i]->InitEnemy();
+				return;
+			}
 		}
-	}
 
 	for (int i = ENEMYLV_1MAXCNT; i < ENEMYLV_1MAXCNT + ENEMYLV_2MAXCNT; ++i)
 	{

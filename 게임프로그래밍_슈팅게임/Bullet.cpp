@@ -10,7 +10,6 @@ int GetGLOBALTIMEA();
 #include "Player.h"
 #include "GLOBAL.h"
 
-
 Bullet::Bullet() : b_Damage(2), b_xPos(0), b_yPos(0), isActive(FALSE) { }
 
 void Bullet::UseBullet_To_Enemy(Enemy* enemyClass[])

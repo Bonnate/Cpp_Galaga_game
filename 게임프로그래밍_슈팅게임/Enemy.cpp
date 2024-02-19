@@ -76,7 +76,7 @@ void Enemy::Shoot(const char _Enemy_LV_ID)
 		}
 		break;
 	}
-	
+
 }
 
 bool Enemy::CheckCrash(int _TargetX, int _TargetY, int TargetSize)
@@ -99,8 +99,8 @@ void Enemy::MoveToXY(const int _x, const int _y, Enemy* Enemy[])
 			e_xPos -= _x;
 			e_yPos -= _y;
 
-			if (e_xPos <= 2)	e_xPos ++;
-			if (e_xPos >= 78)	e_xPos --;
+			if (e_xPos <= 2)	e_xPos++;
+			if (e_xPos >= 78)	e_xPos--;
 			return;
 		}
 
@@ -110,16 +110,16 @@ void Enemy::MoveToXY(const int _x, const int _y, Enemy* Enemy[])
 			e_xPos -= _x;
 			e_yPos -= _y;
 
-			if (e_xPos <= 2)	e_xPos ++;
-			if (e_xPos >= 78)	e_xPos --;
+			if (e_xPos <= 2)	e_xPos++;
+			if (e_xPos >= 78)	e_xPos--;
 			return;
 		}
 
 	e_xPos += _x;
 	e_yPos += _y;
 
-	if (e_xPos <= 2)	e_xPos ++;
-	if (e_xPos >= 78)	e_xPos --;
+	if (e_xPos <= 2)	e_xPos++;
+	if (e_xPos >= 78)	e_xPos--;
 	if (e_yPos <= 4)	++e_yPos;
 	if (e_yPos > 30)	--e_yPos;
 }
@@ -144,7 +144,7 @@ void Enemy::DisplayEnemy(const char Enemy_LV_ID)
 	case 2:
 		drawToBackBuffer(e_xPos - 3, e_yPos, "__ | __");
 		drawToBackBuffer(e_xPos - 4, e_yPos + 1, "@--(_)--@");
-		
+
 		break;
 
 	}
@@ -155,7 +155,7 @@ const char Enemy::GetEnemyID()
 	return Enemy_LV_ID;
 }
 
-Enemy::~Enemy() 
+Enemy::~Enemy()
 {
 	for (int i = 0; i < ENEMYLV_1MAXBULLET; ++i)
 		delete EnemyBullet[i];
